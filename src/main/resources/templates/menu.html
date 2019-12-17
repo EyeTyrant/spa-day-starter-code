@@ -6,6 +6,7 @@
         <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
     </head>
     <body>
+        <div class="border">
         <h1>My Super Fancy Spa</h1>
 
         <div id = "clientProfile">
@@ -14,7 +15,6 @@
                 <p th:text="${skintype}"></p>
                 <p th:text="${manipedi}"></p>
         </div>
-
 
         <div id = "servicesMenu">
             <h2>Menu of Available Services</h2>
@@ -28,6 +28,16 @@
                 </tr>
                 </th:block>
             </table>
+            <th:block th:if='${manipedi.equals("manicure")}'>
+                <h3>Manicure</h3>
+                <p th:replace="fragments :: manicureDescription"></p>
+            </th:block>
+            <th:block th:if='${manipedi.equals("pedicure")}'>
+                <h3>Pedicure</h3>
+                <p th:replace="fragments :: pedicureDescription"></p>
+            </th:block>
+
+        </div>
         </div>
     </body>
 </html>
