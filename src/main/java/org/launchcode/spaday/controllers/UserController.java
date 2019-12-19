@@ -15,17 +15,17 @@ public class UserController {
 
   @GetMapping("add")
   public String displayAddUserForm(){
-
-    return "add";
+    return "user/add";
   }
 
   @PostMapping("add")
   public String processAddUserForm(Model shmodel, @ModelAttribute User abuser, String verify) {
     // add form submission handling code here
+    shmodel.addAttribute("abuser", abuser);
     if (verify.equals(abuser.getPassword())){
       return "redirect:/user";
     }
-    return "add";
+    return "redirect:";
   }
 
 }
