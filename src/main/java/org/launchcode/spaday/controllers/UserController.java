@@ -19,10 +19,10 @@ public class UserController {
   }
 
   @PostMapping("add")
-  public String processAddUserForm(Model shmodel, @ModelAttribute User abuser, String verify) {
+  public String processAddUserForm(Model shmodel, @ModelAttribute User shmuser, String verify) {
     // add form submission handling code here
-    shmodel.addAttribute("abuser", abuser);
-    if (verify.equals(abuser.getPassword())){
+    shmodel.addAttribute("abuser", shmuser);
+    if (verify.equals(shmuser.getPassword())){
       return "redirect:/user";
     }
     return "redirect:";
