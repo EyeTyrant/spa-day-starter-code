@@ -18,14 +18,16 @@ public class UserController {
     return "user/add";
   }
 
-  @PostMapping("add")
-  public String processAddUserForm(Model shmodel, @ModelAttribute User shmuser, String verify) {
+  @PostMapping // ("add") a parameter is not needed when returning to a different page
+  public String processAddUserForm(@ModelAttribute User newUser, String verify, Model shmodel) {
     // add form submission handling code here
-    shmodel.addAttribute("abuser", shmuser);
-    if (verify.equals(shmuser.getPassword())){
-      return "redirect:/user";
+    if (newUser.getPassword().equals(verify)){
+    shmodel.addAttribute("newUser", newUser.getUserName());
+      return "user/index";
+    } else {
+    shmodel.addAttribute("err", "Error!");
+        return "user/add";
     }
-    return "redirect:";
   }
 
 }

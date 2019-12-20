@@ -5,19 +5,24 @@
     <title>Title</title>
   </head>
   <body>
-
+    <h1 th:text="${newUser}"></h1>
     <div>
-      <form method="post" th:action="@{user/add}">
-        <label>Name:</label>
-        <input type="text" name="userName">
-        <label>Email:</label>
-        <input type="email" name="email">
-        <label>Password:</label>
-        <input type="password" name="password">
-        <label>Verify Password:</label>
-        <input type="password" name="password">
+      <form method="post" th:action="@{/user}">
+        <label>Name:
+          <input type="text" name="userName">
+        </label>
+        <label>Email:
+          <input type="text" name="email">
+        </label>
+        <label>Password:
+          <input type="text" name="password">
+        </label>
+        <label>Verify Password:
+          <input type="text" name="verify">
+        </label>
+        <h1 th:text="${err}"></h1>
+          <input type="submit" value="submit">
       </form>
-      <input type="submit" value="submit">
     </div>
 
   </body>

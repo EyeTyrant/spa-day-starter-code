@@ -45,13 +45,11 @@ public class User {
     if (this == o) return true;
     if (!(o instanceof User)) return false;
     User user = (User) o;
-    return getUserName().equals(user.getUserName()) &&
-        getEmail().equals(user.getEmail()) &&
-        getPassword().equals(user.getPassword());
+    return getPassword().equals(user.getPassword());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getUserName(), getEmail(), getPassword());
+    return Objects.hash(getPassword());
   }
 }
