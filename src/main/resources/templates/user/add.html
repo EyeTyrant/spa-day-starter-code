@@ -5,14 +5,14 @@
     <title>Title</title>
   </head>
   <body>
-    <h1 th:text="${newUser}"></h1>
+
     <div>
       <form method="post" th:action="@{/user}">
         <label>Name:
-          <input type="text" name="userName">
+          <input type="text" name="userName" th:value="${newUser}">
         </label>
         <label>Email:
-          <input type="text" name="email">
+          <input type="text" name="email" th:value="${email}">
         </label>
         <label>Password:
           <input type="text" name="password">

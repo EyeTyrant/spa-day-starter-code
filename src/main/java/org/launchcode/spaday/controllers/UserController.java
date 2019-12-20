@@ -18,11 +18,12 @@ public class UserController {
     return "user/add";
   }
 
-  @PostMapping // ("add") a parameter is not needed when returning to a different page
+  @PostMapping // ("add") a parameter is not needed when returning to a different page?
   public String processAddUserForm(@ModelAttribute User newUser, String verify, Model shmodel) {
     // add form submission handling code here
-    if (newUser.getPassword().equals(verify)){
     shmodel.addAttribute("newUser", newUser.getUserName());
+    shmodel.addAttribute("email", newUser.getEmail());
+    if (newUser.getPassword().equals(verify)){
       return "user/index";
     } else {
     shmodel.addAttribute("err", "Error!");
