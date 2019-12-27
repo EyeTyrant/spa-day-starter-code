@@ -14,17 +14,17 @@
         <p class="error" th:errors="${user.username}"></p>
         <label>
             Email:
-            <input type="text" th:field="${user.email}">
+            <input type="email" th:field="${user.email}">
         </label>
         <p class="error" th:errors="${user.email}"></p>
         <label>
             Password:
-            <input type = 'text' th:field="${user.password}">
+            <input type = 'password' th:field="${user.password}">
         </label>
         <p class="error" th:errors="${user.password}"></p>
         <label>
             Verify Password:
-            <input type = 'text' name="verify">
+            <input type = 'password' name="verify">
         </label>
         <p class="error" th:errors="${user.password}"></p>
 
